@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Animal Cell: Bunny</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Interactive Animal Cell: Bunny</h1>
+    <p>Click on the organelles to learn about their function.</p>
+  </header>
+
+  <div class="cell-container">
+    <img src="images/bunny-cell.svg" alt="Bunny Animal Cell" class="animal-cell" usemap="#cell-map">
+
+    <map name="cell-map">
+      <area shape="rect" coords="100,50,150,100" alt="Nucleus" href="javascript:void(0);" onclick="showOrganelleInfo('nucleus')">
+      <area shape="circle" coords="200,150,50" alt="Mitochondria" href="javascript:void(0);" onclick="showOrganelleInfo('mitochondria')">
+      <area shape="circle" coords="300,250,40" alt="Ribosomes" href="javascript:void(0);" onclick="showOrganelleInfo('ribosomes')">
+    </map>
+  </div>
+
+  <div id="organelle-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="organelle-title"></h2>
+      <p id="organelle-description"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

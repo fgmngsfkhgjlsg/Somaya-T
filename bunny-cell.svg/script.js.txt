@@ -1,0 +1,38 @@
+// script.js
+
+const organellesInfo = {
+  nucleus: {
+    title: "Nucleus",
+    description: "The nucleus is the control center of the cell, containing genetic material (DNA) that controls cell activities."
+  },
+  mitochondria: {
+    title: "Mitochondria",
+    description: "Mitochondria are the powerhouses of the cell, responsible for producing energy in the form of ATP."
+  },
+  ribosomes: {
+    title: "Ribosomes",
+    description: "Ribosomes are the sites of protein synthesis, where amino acids are linked together to form proteins."
+  }
+};
+
+function showOrganelleInfo(organelle) {
+  const modal = document.getElementById("organelle-modal");
+  const title = document.getElementById("organelle-title");
+  const description = document.getElementById("organelle-description");
+
+  title.textContent = organellesInfo[organelle].title;
+  description.textContent = organellesInfo[organelle].description;
+
+  modal.style.display = "block";
+}
+
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.onclick = function() {
+  document.getElementById("organelle-modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target === document.getElementById("organelle-modal")) {
+    document.getElementById("organelle-modal").style.display = "none";
+  }
+}
